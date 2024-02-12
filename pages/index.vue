@@ -1,5 +1,15 @@
 <template>
-  <div>여기가 index 페이지입니다.</div>
+  <v-card dark>
+    <v-responsive :aspect-ratio="16 / 9">
+      <p>Vuetify</p>
+    </v-responsive>
+  </v-card>
 </template>
-<script setup lang="ts"></script>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'test',
+})
+</script>
+
 <style scoped></style>
