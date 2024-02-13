@@ -1,5 +1,5 @@
 <template>
-  <v-card dark>
+  <v-card dark min-height="300vh">
     <v-responsive :aspect-ratio="16 / 9">
       <p>Vuetify</p>
     </v-responsive>
