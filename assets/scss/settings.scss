@@ -1,6 +1,38 @@
 @forward 'vuetify/settings' with (
   // $button-color: blue,
   $button-font-weight: 900,
-  $button-border: 10px,
+  $button-border: 5px,
   $button-font-size: 10px
 );
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+.sidebar.close
+  > .copy-sub
+  > .sub-menu::-webkit-scrollbar-button:vertical:start:decrement,
+.sidebar.close
+  > .copy-sub
+  > .sub-menu::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 25px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--lightestgrey);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+  width: 3vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

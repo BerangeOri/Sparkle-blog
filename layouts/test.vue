@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="bg-grey-lighten-3">
+  <v-layout class="bg-amber-lighten-3">
     <v-col cols="2">
       <div class="py-10"></div>
       <v-sheet rounded="lg">
@@ -22,14 +22,14 @@
       </v-sheet>
     </v-col>
     <v-col cols="8">
-      <v-app class="bg-grey-lighten-3" id="inspire">
+      <v-app class="bg-amber-lighten-3" id="inspire">
         <v-app-bar
           flat
           prepend-icon="mdi-menu"
           scroll-behavior="hide"
           scroll-target="#target"
           scroll-threshold="150"
-          class="pa-auto"
+          class="px-3 py-1"
         >
           <v-container class="mx-auto d-flex align-center justify-center">
             <!-- <v-avatar class="me-4" color="grey-darken-1" size="32"></v-avatar> -->
@@ -38,7 +38,8 @@
                 v-for="link in links"
                 :key="link"
                 :text="link"
-                class="text-h5"
+                class="text-h5 mx-2"
+                :to="'/' + linkRoute[link]"
               ></v-btn>
             </v-btn-toggle>
 
@@ -59,7 +60,11 @@
           </v-container>
         </v-app-bar>
         <v-main>
-          <v-sheet max-height="90vh" id="target" class="overflow-y-auto my-5">
+          <v-sheet
+            id="target"
+            class="overflow-y-auto my-5 bg-amber-lighten-3"
+            max-height="90vh"
+          >
             <slot />
           </v-sheet>
         </v-main>
@@ -74,6 +79,12 @@ import { ref } from 'vue'
 
 const tog = ref('')
 const links = ref(['HOME', 'POSTS', 'GUEST', 'TAGS'])
+const linkRoute = ref<Record<string, string>>({
+  HOME: 'home',
+  POSTS: 'post',
+  GUEST: 'guest',
+  TAGS: 'tag',
+})
 </script>
 
 <style lang="scss" scoped></style>
