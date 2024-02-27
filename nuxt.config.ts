@@ -23,7 +23,11 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-  modules: ['@pinia/nuxt', 'vuetify-nuxt-module'],
+  modules: [
+    '@pinia/nuxt',
+    'vuetify-nuxt-module',
+    ['vue3-notion/nuxt', { css: true }],
+  ],
   sourcemap: {
     server: false,
     client: false,
