@@ -70,7 +70,19 @@
         </v-main>
       </v-app>
     </v-col>
-    <v-col cols="2">A </v-col>
+    <v-col cols="2">
+      <v-card>
+        <v-card-title primary-title>
+          이것은 카드입니다.
+        </v-card-title>
+        <v-btn-toggle mandatory multiple v-model="buttons">
+          <v-btn prepend-icon="mdi-plus">ㅎㅇ</v-btn>
+          <v-btn prepend-icon="mdi-plus">bye</v-btn>
+          <v-btn prepend-icon="mdi-plus">GD</v-btn>
+        </v-btn-toggle>
+        <v-icon>mdi-magnify</v-icon>
+      </v-card>
+    </v-col>
   </v-layout>
 </template>
 
@@ -85,6 +97,8 @@ const linkRoute = ref<Record<string, string>>({
   GUEST: 'guest',
   TAGS: 'tag',
 })
+
+const buttons = ref([])
 </script>
 
 <style lang="scss" scoped></style>
